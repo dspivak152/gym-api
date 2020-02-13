@@ -1,21 +1,23 @@
 require('./index');
 const mongoose = require('mongoose');
-const { Author, Book } = require('../server/models');
+const { ExerciseType } = require('../server/models');
+const { Exercise } = require('../server/models');
 
-async function seedAuthors() {
-  console.log('Seeding authors to ' + mongoose.connection.name + '...');
-  const authors = [
-    { name: 'JK Rowling', bio: 'J.K. Rowling is the author of the much-loved series of seven Harry Potter novels, originally published between 1997 and 2007.' },
-    { name: 'Tony Robbins', bio: 'Tony Robbins is an entrepreneur, best-selling author, philanthropist and the nation\'s #1 Life and Business Strategist.' },
+async function seedExercisesTypes() {
+  console.log('Seeding exercises to ' + mongoose.connection.name + '...');
+  const types = [
+    { name: 'EMOM' },
+    { name: 'FOR TIME' },
+    { name: 'ENDURANCE' }
   ];
 
-  for (author of authors) {
-    var newAuthor = new Author(author);
-    await newAuthor.save();
+  for (type of types) {
+    var newType = new ExerciseType(type);
+    await newType.save();
   }
 
-  const a = await Author.find();
-  console.log('authors: ', a);
+  const a = await newType.find();
+  console.log('types: ', a);
 }
 
 async function seedBooks() {
@@ -37,6 +39,6 @@ async function seedBooks() {
   await tonyRobbins.save();
 }
 
-seedAuthors();
-seedBooks();
+seedExercisesTypes();
+//seedBooks();
 

@@ -1,9 +1,9 @@
-const AuthorsController = require('./AuthorsController');
-const BooksController = require('./BooksController');
 const HomeController = require('./HomeController');
+const execriseTypeController = require('./execriseTypeController');
+const execriseController = require('./exerciseController');
 
 module.exports = {
 	HomeController,
-	AuthorsController,
-	BooksController,
+	execriseTypeController,
+	execriseController
 };

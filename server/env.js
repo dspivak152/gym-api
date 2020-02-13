@@ -1,10 +1,10 @@
 var path = require('path'),
 	rootPath = path.normalize(__dirname + '/../../');
-	
+
 module.exports = {
 	development: {
 		rootPath: rootPath,
-		db: 'mongodb://localhost/mongodb-relationships',
+		db: 'mongodb://gymmanagement:ai04051808!@ds361968.mlab.com:61968/gymmanagement',
 		port: process.env.PORT || 3000
 	},
 	production: {

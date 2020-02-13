@@ -14,7 +14,7 @@
     "mongoosejs",
     "database relationships"
   ],
-  "author": "Connor Leech",
+  "author": "Danny Spivak",
   "license": "MIT",
   "dependencies": {
     "bluebird": "^3.5.5",
