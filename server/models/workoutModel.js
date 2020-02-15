@@ -25,3 +25,5 @@ const workout = mongoose.Schema({
 }, { timestamps: true });
 
 module.exports = mongoose.model('Workout', workout);
+
+// This is a complete model to display a work out 

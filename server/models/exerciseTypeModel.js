@@ -8,3 +8,4 @@ const exerciseTypeModel = mongoose.Schema({
 }, { timestamps: true });
 
 module.exports = mongoose.model('ExerciseType', exerciseTypeModel);
+// For example : Pull ups, bench press. trusters

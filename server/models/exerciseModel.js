@@ -7,3 +7,5 @@ const exerciseModel = mongoose.Schema({
     { timestamps: true });
 
 module.exports = mongoose.model('Exercise', exerciseModel);
+
+//Per every exercise there will be also the amount of repeates of that exercise for example : 10 pull ups, 20 situps

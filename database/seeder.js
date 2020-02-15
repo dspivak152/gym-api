@@ -20,14 +20,14 @@ async function seedExercisesTypes() {
   console.log('types: ', a);
 }
 
-async function seedBooks() {
-  console.log('Seeding books to ' + mongoose.connection.name + '...');
+async function seedExercises() {
+  console.log('Seeding exercises to ' + mongoose.connection.name + '...');
 
-  const jkRowling = await Author.findOne({ name: 'JK Rowling' });
-  const tonyRobbins = await Author.findOne({ name: 'Tony Robbins' });
+  const emom = await ExerciseType.findOne({ name: 'EMOM' });
+  const forTime = await ExerciseType.findOne({ name: 'FOR TIME' });
 
-  let harryPotter = new Book({ title: 'Harry Potter', author: jkRowling._id });
-  let awakenGiant = new Book({ title: 'Awaken the Giant Within', author: tonyRobbins._id });
+  let harryPotter = new Exercise({ title: 'Harry Potter', author: jkRowling._id });
+  let awakenGiant = new Exercise({ title: 'Awaken the Giant Within', author: tonyRobbins._id });
 
   await harryPotter.save();
   await awakenGiant.save();
