@@ -6,13 +6,14 @@ const { Exercise } = require('../server/models');
 async function seedExercisesTypes() {
   console.log('Seeding exercises to ' + mongoose.connection.name + '...');
   const types = [
-    { name: 'EMOM' },
-    { name: 'FOR TIME' },
-    { name: 'ENDURANCE' }
+    { name: 'Pull ups' },
+    { name: 'Truster' },
+    { name: 'Snatch' }
   ];
 
+  var newType = {};
   for (type of types) {
-    var newType = new ExerciseType(type);
+    newType = new ExerciseType(type);
     await newType.save();
   }
 
