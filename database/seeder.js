@@ -4,7 +4,7 @@ const { ExerciseType } = require('../server/models');
 const { Exercise } = require('../server/models');
 
 async function seedExercisesTypes() {
-  console.log('Seeding exercises to ' + mongoose.connection.name + '...');
+  console.log('Seeding exercises types to ' + mongoose.connection.name + '...');
   const types = [
     { name: 'Pull ups' },
     { name: 'Truster' },
@@ -16,30 +16,27 @@ async function seedExercisesTypes() {
     newType = new ExerciseType(type);
     await newType.save();
   }
-
-  const a = await newType.find();
-  console.log('types: ', a);
 }
 
 async function seedExercises() {
   console.log('Seeding exercises to ' + mongoose.connection.name + '...');
 
-  const emom = await ExerciseType.findOne({ name: 'EMOM' });
-  const forTime = await ExerciseType.findOne({ name: 'FOR TIME' });
+  const pullUpExType = await ExerciseType.findOne({ name: 'Pull ups' });
+  const trusterExType = await ExerciseType.findOne({ name: 'Truster' });
 
-  let harryPotter = new Exercise({ title: 'Harry Potter', author: jkRowling._id });
-  let awakenGiant = new Exercise({ title: 'Awaken the Giant Within', author: tonyRobbins._id });
+  let pullUpEx = new Exercise({ repets: 10, exerciseType: pullUpExType._id });
+  let trusterEx = new Exercise({ repets: 20, exerciseType: trusterExType._id });
 
-  await harryPotter.save();
-  await awakenGiant.save();
+  await pullUpEx.save();
+  await trusterEx.save();
 
-  jkRowling.books.push(harryPotter);
-  tonyRobbins.books.push(awakenGiant);
+  // jkRowling.books.push(harryPotter);
+  // tonyRobbins.books.push(awakenGiant);
 
-  await jkRowling.save();
-  await tonyRobbins.save();
+  // await jkRowling.save();
+  // await tonyRobbins.save();
 }
 
-seedExercisesTypes();
-//seedBooks();
+//seedExercisesTypes();
+seedExercises();
 
