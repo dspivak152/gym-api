@@ -3,6 +3,7 @@ const express = require('express'),
 	rootPath = path.normalize(__dirname + '/../'),
 	router = express.Router(),
 	{ execriseTypeController,
+		execriseController,
 		HomeController } = require('./controllers');
 
 module.exports = function (app) {
@@ -11,6 +12,10 @@ module.exports = function (app) {
 
 	// execrise type routes
 	router.get('/exTypes', execriseTypeController.index);
+
+	// execrise routes
+	router.get('/exercises', execriseController.index);
+
 	// router.post('/authors', AuthorsController.store);
 	// router.get('/authors/:id', AuthorsController.show);
 	// router.put('/authors/:id', AuthorsController.update);

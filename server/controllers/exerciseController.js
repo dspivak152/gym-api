@@ -2,7 +2,7 @@ const { Exercise } = require('../models/index');
 
 const ExecriseController = {
     async index(req, res) {
-        const exercise = await Exercise.find();
+        const exercise = await Exercise.find().populate('exerciseType');
         res.send(exercise);
     },
     async store(req, res) {
