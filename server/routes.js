@@ -4,6 +4,7 @@ const express = require('express'),
 	router = express.Router(),
 	{ execriseTypeController,
 		execriseController,
+		workoutController,
 		HomeController } = require('./controllers');
 
 module.exports = function (app) {
@@ -16,6 +17,8 @@ module.exports = function (app) {
 	// execrise routes
 	router.get('/exercises', execriseController.index);
 
+	// Workout routes
+	router.get('/workouts', workoutController.index);
 	// router.post('/authors', AuthorsController.store);
 	// router.get('/authors/:id', AuthorsController.show);
 	// router.put('/authors/:id', AuthorsController.update);
