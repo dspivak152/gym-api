@@ -2,21 +2,7 @@ const { Workout } = require('../models/index');
 //.populate('exercises').populate('exerciseType');
 const WorkoutController = {
     async index(req, res) {
-        // Workout.find({}).populate("workoutTypeId").populate('rounds').exec(function (err, data) {
-        //     if (err) return handleError(err);
-
-        //     async.forEach(data[0].rounds[0], function (item, callback) {
-        //         exercises.populate(item.exercises, { "path": "exerciseType" }, function (err, output) {
-        //             if (err) throw err; // or do something
-
-        //             callback();
-        //         });
-        //     }, function (err) {
-        //         res.json(data);
-        //     });
-
-        // });
-        const workouts = await Workout.find().populate('workoutTypeId').populate('rounds');
+        const workouts = await Workout.find().populate('workoutTypeId').populate('rounds').populate('rounds.exercises').populate('rounds.exercises.exerciseType');
         res.send(workouts);
     },
     async store(req, res) {
