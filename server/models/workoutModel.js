@@ -1,4 +1,5 @@
 const mongoose = require('mongoose');
+var deepPopulate = require('mongoose-deep-populate')(mongoose);
 
 const workout = mongoose.Schema({
     name: {
@@ -23,6 +24,13 @@ const workout = mongoose.Schema({
         default: ['pending']
     }
 }, { timestamps: true });
+
+// workout.plugin(deepPopulate, {
+//     whitelist: [
+//         'workoutTypeId',
+//         'rounds.exercises.exerciseType'
+//     ]
+// });
 
 module.exports = mongoose.model('Workout', workout);
 

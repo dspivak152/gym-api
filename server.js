@@ -2,7 +2,7 @@ const express = require('express'),
 	mongoose = require('mongoose'),
 	bodyParser = require('body-parser'),
 	cookieParser = require('cookie-parser'),
-    methodOverride = require('method-override'),
+	methodOverride = require('method-override'),
 	cors = require('cors'),
 	app = express();
 
@@ -23,6 +23,6 @@ app.use(express.static(__dirname + '/public'));
 
 require('./server/routes')(app);
 
-app.listen(envConfig.port, function(){
-  console.log('Server listening on port ' + envConfig.port)
+app.listen(envConfig.port, function () {
+	console.log('Server listening on port ' + envConfig.port)
 });
