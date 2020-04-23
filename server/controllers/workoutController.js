@@ -4,10 +4,9 @@ const WorkoutController = {
     async index(req, res) {
         //const workouts = await Workout.find({}).deepPopulate('workoutTypeId rounds exercises exerciseType');
         //const workouts = await Workout.find({}).populate('workoutTypeId').populate('rounds').populate('rounds.exercises').populate('rounds.exercises.exerciseType');
-        const workouts = await Workout.find()
+         const workouts = await Workout.find()
             .populate({ path: 'workoutTypeId' })
-            .populate({ path: 'rounds' })
-        // .populate{(path: 'exercises', model: 'exercises')};
+            .populate({ path: 'rounds', populate: 'exercises exerciseType' })
         res.send(workouts);
     },
     async store(req, res) {
