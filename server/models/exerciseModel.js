@@ -2,15 +2,7 @@ const mongoose = require('mongoose');
 
 const exerciseModel = mongoose.Schema({
     repets: { type: Number, max: 1000 },
-    exerciseType: { type: mongoose.Schema.Types.ObjectId, ref: 'exerciseType' }
-    // exerciseType: {
-    //     type: [{
-    //         type: String,
-    //         enum: ['Pull ups', 'bench press', 'trusters', 'double unders']
-    //     }],
-    //     default: ['TRUSTERE']
-    //     // exerciseType: { type: mongoose.Schema.Types.ObjectId, ref: 'exerciseType' }
-    // }
+    exerciseType: { type: mongoose.Schema.ObjectId, ref: 'exerciseType' }
 },
     { timestamps: true });
 
