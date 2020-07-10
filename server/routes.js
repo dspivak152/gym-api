@@ -19,6 +19,7 @@ module.exports = function (app) {
 
 	// Workout routes
 	router.get('/workouts', workoutController.index);
+
 	// router.post('/authors', AuthorsController.store);
 	// router.get('/authors/:id', AuthorsController.show);
 	// router.put('/authors/:id', AuthorsController.update);

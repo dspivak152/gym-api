@@ -6,7 +6,13 @@ const WorkoutController = {
         //const workouts = await Workout.find({}).populate('workoutTypeId').populate('rounds').populate('rounds.exercises').populate('rounds.exercises.exerciseType');
         const workouts = await Workout.find({})
             .populate({ path: 'workoutTypeId' })
-            .populate({ path: 'rounds', model: 'Round', populate: { path: 'exercises', model: 'Exercise', populate: { path: 'exerciseType', model: 'exerciseType' } } })
+            .populate({
+                path: 'rounds', model: 'Round', populate:
+                {
+                    path: 'exercises', model: 'Exercise', populate:
+                        { path: 'exerciseType', model: 'ExerciseType' }
+                }
+            })
         //.populate({ path: 'rounds exercises exerciseType' })
         //.populate({ path: 'rounds.exercises.exerciseType' })
 

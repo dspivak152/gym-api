@@ -2,7 +2,7 @@ const mongoose = require('mongoose');
 
 const exerciseModel = mongoose.Schema({
     repets: { type: Number, max: 1000 },
-    exerciseType: { type: mongoose.Schema.ObjectId, ref: 'exerciseType' }
+    exerciseType: { type: mongoose.Schema.ObjectId, ref: 'ExerciseType' }
 },
     { timestamps: true });
 

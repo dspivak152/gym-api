@@ -28,7 +28,7 @@ const workout = mongoose.Schema({
 // workout.plugin(deepPopulate, {
 //     whitelist: [
 //         'workoutTypeId',
-//         'rounds.exercises.exerciseType'
+//         'rounds.exercises.ExerciseType'
 //     ]
 // });
 

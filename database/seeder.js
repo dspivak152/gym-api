@@ -42,8 +42,8 @@ async function seedExercises() {
 
 async function seedRound() {
   console.log('Seeding rounds to ' + mongoose.connection.name + '...');
-  const pullUpEx = await Exercise.findById({ _id: '5ed166dadc26b4099b4938d8' });
-  const pullTrusterEx = await Exercise.findById({ _id: '5ed166dadc26b4099b4938d9' });
+  const pullUpEx = await Exercise.findById({ _id: '5f08d601c251ee07ea565e83' });
+  const pullTrusterEx = await Exercise.findById({ _id: '5f08d601c251ee07ea565e84' });
 
   let round1 = new Round({ repets: 1, exercises: [pullUpEx, pullTrusterEx] });
 
@@ -66,7 +66,7 @@ async function seedWorkoutType() {
 
 async function seedWorkout() {
   console.log('Seeding workout to ' + mongoose.connection.name + '...');
-  const round = await Round.findById({ _id: '5ed16787e095f809bfa1098c' });
+  const round = await Round.findById({ _id: '5f08d6c5dc4cc7086108004c' });
   const workoutType = await WorkoutType.findOne({ name: 'FOR TIME' })
   let completeWorkout = new Workout({ name: 'Filthy fifthy', description: 'no text', workoutTypeId: workoutType._id, rounds: round });
 
