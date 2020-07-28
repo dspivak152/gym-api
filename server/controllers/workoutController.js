@@ -9,13 +9,10 @@ const WorkoutController = {
             .populate({
                 path: 'rounds', model: 'Round', populate:
                 {
-                    path: 'exercises', model: 'Exercise', populate:
-                        { path: 'exerciseType', model: 'ExerciseType' }
+                    path: 'exercises', model: 'Exercise'
+
                 }
             })
-        //.populate({ path: 'rounds exercises exerciseType' })
-        //.populate({ path: 'rounds.exercises.exerciseType' })
-
         res.send(workouts);
         // const workouts = Workout.find({}).populate('workoutTypeId').
         //     populate('rounds').
