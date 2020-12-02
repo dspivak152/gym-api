@@ -13,6 +13,8 @@ module.exports = function (app) {
 
 	// execrise type routes
 	router.get('/exTypes', execriseTypeController.index);
+	router.post('/exType', execriseTypeController.store);
+	router.put('/exType', execriseTypeController.store);
 
 	// execrise routes
 	router.get('/exercises', execriseController.index);

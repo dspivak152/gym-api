@@ -7,7 +7,7 @@ const express = require('express'),
 	app = express();
 
 const env = process.env.NODE_ENV = process.env.NODE_ENV || 'development',
-	envConfig = require('./server/env')[env];
+	envConfig = require('./server/env')[env]
 
 require('./database');
 
@@ -21,7 +21,7 @@ app.use(methodOverride());
 app.use(cookieParser());
 app.use(express.static(__dirname + '/public'));
 
-require('./server/routes')(app);
+require('./server/routes')(app)
 
 app.listen(envConfig.port, function () {
 	console.log('Server listening on port ' + envConfig.port)
