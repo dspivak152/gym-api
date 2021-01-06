@@ -14,7 +14,9 @@ module.exports = function (app) {
 	// execrise type routes
 	router.get('/exTypes', execriseTypeController.index);
 	router.post('/exType', execriseTypeController.store);
-	router.put('/exType', execriseTypeController.store);
+	router.get('/exType/:id', execriseTypeController.show);
+	router.put('/exType/:id', execriseTypeController.update);
+
 
 	// execrise routes
 	router.get('/exercises', execriseController.index);
