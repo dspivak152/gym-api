@@ -32,8 +32,11 @@ const ExecriseTypeController = {
             res.send(type.name);
         });
     },
-    async remove(req, res) {
-
+    async removeOne(req, res) {
+        await ExerciseType.findByIdAndDelete(req.params.id, function (err) {
+            if (err) console.error(err);
+            res.send(true);
+        });
     }
 }
 
